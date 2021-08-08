@@ -63,5 +63,64 @@ namespace DataEntryProject
             grbDataEntry.Enabled = false;
             timTimer.Enabled = false;
         }
-    }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            string dataEntry;
+
+            if (txtName.Text.Equals("") || txtAdress.Text.Equals("") ||
+                txtCity.Text.Equals("") || txtState.Text.Equals("") || txtZip.Text.Equals(""))
+            {
+                MessageBox.Show("Each box must have an input", "Error Message",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtName.Focus();
+                return;
+            }
+
+            dataEntry = txtName.Text + "\r\n" + txtAdress.Text + "\r\n" + txtCity.Text + "\r\n" +
+                txtState.Text + "\r\n" + txtZip.Text + "\r\n";
+            MessageBox.Show(dataEntry, "Data Entry", MessageBoxButtons.OK);
+            btnClear.PerformClick();
+        }
+
+        private void txtInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string textBoxSender = ((TextBox)sender).Name;
+
+            if (e.KeyChar == 13)
+            { 
+                switch(textBoxSender)
+                {
+                   case "txtName":
+                       txtAdress.Focus();
+                       break;
+                   case "txtAdress":
+                       txtCity.Focus();
+                       break;
+                    case "txtCity":
+                        txtState.Focus();
+                        break;
+                    case "txtState":
+                        txtZip.Focus();
+                        break;
+                    case "txtZip":
+                        btnAccept.Focus();
+                        break;
+                 }
+            }
+
+            if (textBoxSender.Equals("txtZip"))
+            {
+                if (e.KeyChar >='0' && e.KeyChar <='9' || e.KeyChar == 8)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+    }        
 }
+

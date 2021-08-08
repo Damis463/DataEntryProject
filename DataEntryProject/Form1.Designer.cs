@@ -92,6 +92,7 @@ namespace DataEntryProject
             this.btnAccept.TabIndex = 10;
             this.btnAccept.Text = "&Accept";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // txtZip
             // 
@@ -99,6 +100,7 @@ namespace DataEntryProject
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(106, 20);
             this.txtZip.TabIndex = 9;
+            this.txtZip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInput_KeyPress);
             // 
             // txtState
             // 
@@ -106,6 +108,7 @@ namespace DataEntryProject
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(106, 20);
             this.txtState.TabIndex = 8;
+            this.txtState.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInput_KeyPress);
             // 
             // txtCity
             // 
@@ -113,6 +116,7 @@ namespace DataEntryProject
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(106, 20);
             this.txtCity.TabIndex = 7;
+            this.txtCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInput_KeyPress);
             // 
             // txtAdress
             // 
@@ -120,13 +124,15 @@ namespace DataEntryProject
             this.txtAdress.Name = "txtAdress";
             this.txtAdress.Size = new System.Drawing.Size(106, 20);
             this.txtAdress.TabIndex = 6;
+            this.txtAdress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInput_KeyPress);
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(76, 29);
+            this.txtName.Location = new System.Drawing.Point(76, 26);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(106, 20);
-            this.txtName.TabIndex = 5;
+            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.TabIndex = 12;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInput_KeyPress);
             // 
             // label5
             // 
